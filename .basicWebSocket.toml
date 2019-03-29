@@ -1,0 +1,5 @@
+[app]
+name = "basic-websocket"
+version = "0.0.1"
+host = "localhost"
+port = 8000

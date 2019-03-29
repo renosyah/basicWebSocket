@@ -24,24 +24,15 @@ func StartListeningMessagesAsClient() {
 		fmt.Println("failed to send: ", err.Error())
 		os.Exit(1)
 	}
-	incomingMessages := make(chan [] byte)
-
-	go func(ws *websocket.Conn,incomingMessages chan [] byte){
-		for {
-			_,message,err := ws.ReadMessage()
-			if err != nil {
-				fmt.Printf("Error::: %s\n", err.Error())
-				return
-			}
-			incomingMessages <- message
-		}
-	}(conn,incomingMessages)
 
 	for {
-		select {
-		case message := <- incomingMessages:
-			fmt.Println("message : ",string(message))
+		_,message,err := conn.ReadMessage()
+		if err != nil {
+			fmt.Printf("Error::: %s\n", err.Error())
+			break
 		}
+
+		fmt.Println("message : ",string(message))
 	}
 
 	defer conn.Close()

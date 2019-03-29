@@ -13,15 +13,24 @@ go run main.go
 ```
 
 
+
+
+
+
 open this link on your browser to start :
 
 ![GitHub Logo](/img/1.jpg)
 
 ```
-
 localhost:8000/start
 
 ```
+
+
+
+
+
+
 
 open this link on your broser to ping :
 
@@ -29,11 +38,15 @@ open this link on your broser to ping :
 
 
 ```
-
 localhost:8000/ping?message="hello"
 
-
 ```
+
+
+
+
+
+
 
 see your terminal :
 
